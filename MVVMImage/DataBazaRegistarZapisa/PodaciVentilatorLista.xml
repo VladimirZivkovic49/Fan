@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfPodaciNoviVentilator xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <PodaciNoviVentilator>
+    <ImeVentilatoraText>Ventilator peći</ImeVentilatoraText>
+    <TehnoloskaOznakaText>333FA52</TehnoloskaOznakaText>
+    <LokacijaUPogonuText>Peć</LokacijaUPogonuText>
+    <ProizvodjacText>Sirocco</ProizvodjacText>
+  </PodaciNoviVentilator>
+  <PodaciNoviVentilator>
+    <ImeVentilatoraText>NoviVentilator Peći</ImeVentilatoraText>
+    <TehnoloskaOznakaText>333FA62</TehnoloskaOznakaText>
+    <LokacijaUPogonuText>Predgrejač</LokacijaUPogonuText>
+    <ProizvodjacText>Sirroco</ProizvodjacText>
+  </PodaciNoviVentilator>
+  <PodaciNoviVentilator>
+    <ImeVentilatoraText>Ventilator hladnjaka</ImeVentilatoraText>
+    <TehnoloskaOznakaText>336FA01</TehnoloskaOznakaText>
+    <LokacijaUPogonuText>Elektrfilter hladnjaka</LokacijaUPogonuText>
+    <ProizvodjacText>Eleks</ProizvodjacText>
+  </PodaciNoviVentilator>
+</ArrayOfPodaciNoviVentilator>

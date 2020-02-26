@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5D185A57-4434-4CC0-B941-169E23BD24FA}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>MVVMImage</RootNamespace>
+    <AssemblyName>MVVMImage</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AmCharts.Windows.QuickCharts, Version=1.2.5025.20268, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Quick.Charts.WPF.1.2\lib\net40\AmCharts.Windows.QuickCharts.dll</HintPath>
+    </Reference>
+    <Reference Include="InteractiveDataDisplay.WPF, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\InteractiveDataDisplay.WPF.1.0.0\lib\net452\InteractiveDataDisplay.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Interactions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\Microsoft.Expression.Interactions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Maps.MapControl.WPF, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Maps.MapControl.WPF.1.0.0.3\lib\net40-Client\Microsoft.Maps.MapControl.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Reactive, Version=4.0.0.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Reactive.4.0.0\lib\net46\System.Reactive.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Commands\ParameterlessCommand.cs" />
+    <Compile Include="Commands\RelayCommand.cs" />
+    <Compile Include="KoeficijentiKrivihUOdnosuNaBrojObrtaja\PodaciZaObracunIPrikazRezultata.cs" />
+    <Compile Include="KoeficijentiKrivihUOdnosuNaBrojObrtaja\ProracunKoeficijenatazaRadnibrojObrtajaVentilatora.cs" />
+    <Compile Include="MainVindowViewModel.cs" />
+    <Compile Include="MainWindowModels\SelektovanjeVrsteIzTabele.cs" />
+    <Compile Include="MainWindowModels\UnosArhiviranihPodataka.cs" />
+    <Compile Include="ProracunKoeficijenataKrivih\ProzorProba.xaml.cs">
+      <DependentUpon>ProzorProba.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProracunKoeficijenataKrivih\UnosTacakaKrivihModels\KoeficijentiProracunAbstract.cs" />
+    <Compile Include="ProracunKoeficijenataKrivih\UnosTacakaKrivihModels\KoeficijentiVentiltor.cs" />
+    <Compile Include="ProracunKoeficijenataKrivih\UnosTacakaKrivihModels\KolekcijaKoeficijenataFamilijeKrivih.cs" />
+    <Compile Include="ProracunKoeficijenataKrivih\UnosTacakaKrivihModels\KolekkcijeKoeficijenataKrivihVentilator.cs" />
+    <Compile Include="ProracunKoeficijenataKrivih\UnosTacakaKrivihModels\Podaci.cs" />
+    <Compile Include="ProracunKoeficijenataKrivih\UnosTacakaKrivihModels\PodaciKolekcija.cs" />
+    <Compile Include="ProracunKoeficijenataKrivih\UnosTacakaKrivihModels\PowerVentilatorKoeficijenti.cs" />
+    <Compile Include="ProracunKoeficijenataKrivih\UnosTacakaKrivihModels\PracenjeUcitavanja.cs" />
+    <Compile Include="ProracunKoeficijenataKrivih\UnosTacakaKrivihModels\ProracunKoeficijenataKrivih.cs" />
+    <Compile Include="ProracunKoeficijenataKrivih\UnosTacakaKrivihModels\ProracunKoeficijenataVentilator.cs" />
+    <Compile Include="ProracunKoeficijenataKrivih\UnosTacakaKrivihModels\ProracunRealnihVrednostiKrivih.cs" />
+    <Compile Include="ProracunKoeficijenataKrivih\UnosTacakaKrivihModels\ProtokTotalP.cs" />
+    <Compile Include="ProracunKoeficijenataKrivih\UnosTacakaKrivihModels\RadioButtonsKriveSelecija.cs" />
+    <Compile Include="ProracunKoeficijenataKrivih\UnosTacakaKrivihModels\StaticPVentilatorKoeficijenti.cs" />
+    <Compile Include="ProracunKoeficijenataKrivih\UnosTacakaKrivihModels\TotalPVentilatorKoeficijenti.cs" />
+    <Compile Include="ProracunKoeficijenataKrivih\UnosTacakaKrivihModels\VentilatorKriveProracunAbstact.cs" />
+    <Compile Include="ProracunKoeficijenataKrivih\UnosTacakaKrivihViewModel.cs" />
+    <Compile Include="ProracunKoeficijenataKrivih\RealneVrednosti_Protok_Pritisak.xaml.cs">
+      <DependentUpon>RealneVrednosti_Protok_Pritisak.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Skaliranje\SkaliranjeModels\GridsVisability.cs" />
+    <Compile Include="Skaliranje\SkaliranjeModels\RadioButtonTextBoxPopuna.cs" />
+    <Compile Include="Skaliranje\SkaliranjeModels\RadioCheckSkaliranje.cs" />
+    <Compile Include="Skaliranje\SkaliranjeModels\SkaliranjeKoeficijenti.cs" />
+    <Compile Include="Skaliranje\SkaliranjeModels\SkaliranjeRadioButtons.cs" />
+    <Compile Include="Skaliranje\SkaliranjeWidow.xaml.cs">
+      <DependentUpon>SkaliranjeWidow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Skaliranje\SkaliranjeWidowVM\SkaliranjeWindowViewModel.cs" />
+    <Compile Include="Skaliranje\UnosTacakaPower.xaml.cs">
+      <DependentUpon>UnosTacakaPower.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Skaliranje\UnosTacakaProtokPritisak.xaml.cs">
+      <DependentUpon>UnosTacakaProtokPritisak.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UnosNoviVentilator\UnesiNoviVentilatorModels\ArhiviranjePodatakaVentilator.cs" />
+    <Compile Include="UnosNoviVentilator\UnesiNoviVentilatorModels\PodaciNoviVentilator.cs" />
+    <Compile Include="UnosNoviVentilator\UnesiNoviVentilatorViewModel.cs" />
+    <Compile Include="UnosNoviVentilator\UnosNoviVentilatorPodaci.xaml.cs">
+      <DependentUpon>UnosNoviVentilatorPodaci.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UnosPodatakaIPrikazRezultata\UlazniIIzlazniPodaci.xaml.cs">
+      <DependentUpon>UlazniIIzlazniPodaci.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UnosPodatakaIPrikazRezultata\UnosIprikazModels\IzvozPodatakaUExcel.cs" />
+    <Compile Include="UnosPodatakaIPrikazRezultata\UnosIprikazModels\PodaciZaUnosIPriazMain.cs" />
+    <Compile Include="UnosPodatakaIPrikazRezultata\UnosIPrikazVM\UnosIPrikazViewModel.cs" />
+    <Compile Include="UnosPodatakaZaUcitavanjeKrivih\UnosPodatakaZaUcitavanje.xaml.cs">
+      <DependentUpon>UnosPodatakaZaUcitavanje.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UnosPodatakaZaUcitavanjeKrivih\UnosPodatakaZaUcitavanjeModels\PodaciOKrivama.cs" />
+    <Compile Include="UnosPodatakaZaUcitavanjeKrivih\UnosPodatakaZaUcitavanjeModels\PodaciOTackamaZaUnos.cs" />
+    <Compile Include="UnosPodatakaZaUcitavanjeKrivih\UnosPodatakaZaUcitavanjeVM\UnosPodatakaZaUcitavanjeViewModel.cs" />
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="ProracunKoeficijenataKrivih\ProzorProba.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ProracunKoeficijenataKrivih\RealneVrednosti_Protok_Pritisak.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Skaliranje\SkaliranjeWidow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Skaliranje\UnosTacakaPower.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Skaliranje\UnosTacakaProtokPritisak.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UnosNoviVentilator\UnosNoviVentilatorPodaci.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UnosPodatakaIPrikazRezultata\UlazniIIzlazniPodaci.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UnosPodatakaZaUcitavanjeKrivih\UnosPodatakaZaUcitavanje.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DataBazaRegistarZapisa\" />
+    <Folder Include="Slika\" />
+    <Folder Include="XLSX\" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

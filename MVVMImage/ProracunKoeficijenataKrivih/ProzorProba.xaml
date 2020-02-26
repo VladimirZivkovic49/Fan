@@ -1,0 +1,57 @@
+﻿<Window x:Class="MVVMImage.ProracunKoeficijenataKrivih.ProzorProba"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MVVMImage.ProracunKoeficijenataKrivih"
+        mc:Ignorable="d"
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+        
+        Title="ProzorProba" Height="450" Width="800">
+   
+   
+        <Grid HorizontalAlignment="Left" Width="790">
+            <Grid.ColumnDefinitions>
+               <ColumnDefinition Width="610"/>
+               <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80" />
+                <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+            <Button Grid.Column="0" Grid.Row="0" x:Name="btn_Skaliraj" Content="Skaliraj" Margin="0,0,531,32"/>
+
+            <RadioButton Grid.Column="0" Grid.Row="0" x:Name="TotalP_RDB" Content="Krive Protok-Totalni P" HorizontalAlignment="Left"  VerticalAlignment="Top" Margin="25,62,0,0"    />
+            <RadioButton Grid.Column="0" Grid.Row="0" x:Name="Snaga_RDB" Content="Krive Protok-Snaga" HorizontalAlignment="Left"  VerticalAlignment="Top" Margin="392,62,0,0"/>
+            <RadioButton Grid.Column="0" Grid.Row="0" x:Name="StaticP_RDB" Content="Krive Protok-Statički P" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="208,62,0,0" />
+
+            <StackPanel  Grid.Column="0" Grid.Row="1"   x:Name="stpn_Dijagram"  Height="340" VerticalAlignment="Bottom" Width="600" HorizontalAlignment="Left" 
+                      Background="Transparent" Margin="0,0,0,0" >
+                <Image x:Name="Slicka"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="339"  />
+
+                <i:Interaction.Triggers >
+                    <i:EventTrigger EventName="MouseLeftButtonDown">
+
+                        <i:InvokeCommandAction Command="{Binding PozicijaMouse}"  CommandParameter="{Binding ElementName=Slicka}" />
+
+                        <!--<i:InvokeCommandAction Command="{Binding  radioButonCommand}"  />-->
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+
+
+
+            </StackPanel>
+
+
+
+
+
+
+        </Grid>
+       
+        
+        
+        </Grid>
+</Window>

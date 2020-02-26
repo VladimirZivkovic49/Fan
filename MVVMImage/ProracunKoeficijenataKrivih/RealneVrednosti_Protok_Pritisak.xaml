@@ -1,0 +1,115 @@
+﻿<Window x:Class="MVVMImage.RealneVrednosti_Protok_Pritisak"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MVVMImage"
+        xmlns:local1="clr-namespace:MVVMImage.ProracunKoeficijenataKrivih"
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+        mc:Ignorable="d"
+        Title="RealneVrednosti_Protok_Pritisak" Height="450" Width="800">
+    <!--<Window.DataContext>
+        <local:MainWindowViewModel/>
+
+    </Window.DataContext>-->
+
+    <Window.Resources>
+
+        <local1:UnosTacakaKrivihViewModel x:Key ="unosTacakaKrivihViewModel"/>
+
+    </Window.Resources>
+
+    <Grid HorizontalAlignment="Left" Width="790">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="610"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+
+        <Grid x:Name="grd_PregledUcitavanja" Grid.Column="0" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <!--<RadioButton  Grid.Row="0" x:Name="TotalP_RDB" Content="Krive Protok-Totalni P" HorizontalAlignment="Left"  VerticalAlignment="Top"   Command="{Binding RadioButtonSelektuj, Source={StaticResource unosTacakaKrivihViewModel}}" IsChecked="{Binding kriterijumiSelekcije.Radio_ProtokTotall,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged, Source={StaticResource unosTacakaKrivihViewModel}}" Margin="10,57,0,0" />-->
+            <!--<RadioButton Grid.Column="0" Grid.Row="0" x:Name="StaticP_RDB" Content="Krive Protok-Statički P" HorizontalAlignment="Left" VerticalAlignment="Top"  Command="{Binding RadioButtonSelektuj, Source={StaticResource unosTacakaKrivihViewModel}}" IsChecked="{Binding kriterijumiSelekcije.Radio_ProtokStaticl, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged, Source={StaticResource unosTacakaKrivihViewModel}}" Margin="220,57,0,0" />
+            <RadioButton Grid.Column="0" Grid.Row="0" x:Name="Snaga_RDB" Content="Krive Protok-Snaga" HorizontalAlignment="Left" VerticalAlignment="Top" Command="{Binding RadioButtonSelektuj, Source={StaticResource unosTacakaKrivihViewModel}}" IsChecked="{Binding kriterijumiSelekcije.Radio_ProtokPowerl,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged, Source={StaticResource unosTacakaKrivihViewModel}}" Margin="465,57,0,0" />-->
+
+        </Grid>
+
+        <Grid x:Name="grd_Dijagram"  Grid.Row="1">
+            <StackPanel Grid.Column="0" Grid.Row="1" x:Name="LeftMoseClick" Height="340" Width="600
+                    " VerticalAlignment="Bottom" HorizontalAlignment="Left"
+                      Background="Transparent" >
+                <Image x:Name="Slicka"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="339" Source="{Binding putanjaUnos, Source={StaticResource unosTacakaKrivihViewModel}}" />
+                <i:Interaction.Triggers >
+                    <i:EventTrigger EventName="MouseLeftButtonDown">
+                        <i:InvokeCommandAction Command="{Binding PozicijaMouseUnos}"  CommandParameter="{Binding ElementName=Slicka}" />
+                        <i:InvokeCommandAction Command="{Binding  radioButonCommand}"  />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </StackPanel>
+
+
+        </Grid>
+
+        <Grid x:Name="grd_zaKomande" Grid.Column="1" Height="406" VerticalAlignment="Top" Margin="10,3,-178,0" >
+            <Button Grid.Row="0" x:Name="ObradaRezultata" Content="Obradi&#xD;&#xA; rezultate" HorizontalAlignment="Center" Width="76" Command="{Binding ObradiRezultate, Source={StaticResource unosTacakaKrivihViewModel}}" Margin="84,10,10,350"  />
+            <RadioButton  Grid.Row="0" x:Name="TotalP_RDB" Content="Krive Protok-Totalni P" HorizontalAlignment="Left"  VerticalAlignment="Top"   Command="{Binding RadioButtonSelektuj, Source={StaticResource unosTacakaKrivihViewModel}}" IsChecked="{Binding kriterijumiSelekcije.Radio_ProtokTotall,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged, Source={StaticResource unosTacakaKrivihViewModel}}" Margin="10,140,0,0" />
+            <RadioButton Grid.Column="0" Grid.Row="0" x:Name="StaticP_RDB" Content="Krive Protok-Statički P" HorizontalAlignment="Left" VerticalAlignment="Top"  Command="{Binding RadioButtonSelektuj, Source={StaticResource unosTacakaKrivihViewModel}}" IsChecked="{Binding kriterijumiSelekcije.Radio_ProtokStaticl, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged, Source={StaticResource unosTacakaKrivihViewModel}}" Margin="10,160,0,0" />
+            <RadioButton Grid.Column="0" Grid.Row="0" x:Name="Snaga_RDB" Content="Krive Protok-Snaga" HorizontalAlignment="Left" VerticalAlignment="Top" Command="{Binding RadioButtonSelektuj, Source={StaticResource unosTacakaKrivihViewModel}}" IsChecked="{Binding kriterijumiSelekcije.Radio_ProtokPowerl,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged, Source={StaticResource unosTacakaKrivihViewModel}}" Margin="10,180,0,0" />
+
+
+
+        </Grid>
+
+        <Label  x:Name="KrivaPoRedu" Content="Kriva za učitavanje po redu" Width="170" Height="48" Margin="0,3,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <Label  x:Name="BrojObrtajaPoRedu" Content="Broj obrtaja ventilatora"  Width="160" Height="48" Margin="226,3,245,368"/>
+        <Label  x:Name="BrojRedTackeUpis" Content="Redni broj tačke za upis"  Width="160" Height="48" Margin="449,3,22,378"/>
+        <TextBlock x:Name="txBl_krivaIme" HorizontalAlignment="Left" Margin="21,56,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="{Binding UcitavanjePracenje.ImeKriveZaUcitavanje, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" FontWeight="Bold" Height="25"/>
+        <TextBlock x:Name="txBl_BrojeviObrtaja" HorizontalAlignment="Left" Margin="226,56,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="109" Text="{Binding UcitavanjePracenje.BrojObrtajaKriveZaUcitavanje, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" FontWeight="Bold" Height="25"/>
+        <TextBlock x:Name="txBl_TackaPoRedu" HorizontalAlignment="Left" Margin="478,56,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="109" Text="{Binding UcitavanjePracenje.RedniBrojTackeUcitavanja, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" FontWeight="Bold" Background="#FFFDFAFA" Foreground="#FFF90D0D" Height="25"/>
+
+
+    </Grid>
+</Window>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<StackPanel Grid.Column="0" Grid.Row="1" x:Name="LeftMoseClick" Height="340" Width="600
+                    " VerticalAlignment="Bottom" HorizontalAlignment="Left"
+                      Background="Transparent" Margin="6,0,190,11">
+                <Image x:Name="Slicka"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="339" Source="{Binding putanjaUnos, Source={StaticResource unosTacakaKrivihViewModel}}" />
+
+                -->
+<!--<Image x:Name="Slicka" Source="{Binding StakPanelSource}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="339"  />-->
+<!--
+                <i:Interaction.Triggers >
+                    <i:EventTrigger EventName="MouseLeftButtonDown">
+
+                        <i:InvokeCommandAction Command="{Binding PozicijaMouseUnos}"  CommandParameter="{Binding ElementName=Slicka}" />
+
+                        -->
+<!--<i:InvokeCommandAction Command="{Binding  radioButonCommand}"  />-->
+<!--
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </StackPanel>
+
+             <Button Grid.Column="1" Grid.Row="0" x:Name="ObradaRezultata" Content="Obradi rezultate" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="95" Height="24" Command="{Binding ObradiRezultate, Source={StaticResource unosTacakaKrivihViewModel}}"   />
+            <Button x:Name="Reset_BTN" Content="Reset XML" HorizontalAlignment="Left" Margin="621,368,0,0" VerticalAlignment="Top" Width="133" Height="32" Command="{Binding ResetujUcitanuKrivu, Source={StaticResource unosTacakaKrivihViewModel}}"  />
+            <RadioButton Grid.Column="0" Grid.Row="0" x:Name="TotalP_RDB" Content="Krive Protok-Totalni P" HorizontalAlignment="Left"  VerticalAlignment="Top"   Command="{Binding RadioButtonSelektuj, Source={StaticResource unosTacakaKrivihViewModel}}" IsChecked="{Binding kriterijumiSelekcije.Radio_ProtokTotall,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged, Source={StaticResource unosTacakaKrivihViewModel}}" Margin="10,58,0,0"     />
+            <RadioButton Grid.Column="0" Grid.Row="0" x:Name="StaticP_RDB" Content="Krive Protok-Statički P" HorizontalAlignment="Left" VerticalAlignment="Top"  Command="{Binding RadioButtonSelektuj, Source={StaticResource unosTacakaKrivihViewModel}}" IsChecked="{Binding kriterijumiSelekcije.Radio_ProtokStaticl, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged, Source={StaticResource unosTacakaKrivihViewModel}}" Margin="222,58,0,0" />
+            <RadioButton Grid.Column="0" Grid.Row="0" x:Name="Snaga_RDB" Content="Krive Protok-Snaga" HorizontalAlignment="Left" VerticalAlignment="Top" Command="{Binding RadioButtonSelektuj, Source={StaticResource unosTacakaKrivihViewModel}}" IsChecked="{Binding kriterijumiSelekcije.Radio_ProtokPowerl,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged, Source={StaticResource unosTacakaKrivihViewModel}}" Margin="467,58,0,0" />-->
+    

@@ -1,0 +1,51 @@
+﻿<Window x:Class="MVVMImage.UnosPodatakaIPrikazRezultata.UlazniIIzlazniPodaci"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MVVMImage.UnosPodatakaIPrikazRezultata"
+        xmlns:local1="clr-namespace:MVVMImage.UnosPodatakaIPrikazRezultata.UnosIPrikazVM"
+        mc:Ignorable="d"
+        Title="UlazniIIzlazniPodaci" Height="450" Width="800">
+    <Window.Resources>
+
+        <local1:UnosIPrikazViewModel x:Key ="unosIPrikazViewModel"/>
+
+    </Window.Resources>
+
+
+    <Grid x:Name="PrikazirealneVrednosti" >
+        <TextBox x:Name="TeorijskiProtok1_TXB" HorizontalAlignment="Left" Height="23" Margin="617,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="{Binding PodaciZaKrivuMain.TeorijskiProtokText, Source={StaticResource unosIPrikazViewModel}}" />
+        <Label x:Name="TeorijskiProtok1_LBL" Content="Teorijski protok na osnovu Sistemske krive " HorizontalAlignment="Left" Margin="512,13,0,0" VerticalAlignment="Top" Width="254" Height="27"/>
+        <Label x:Name="TeorijskSnaga1_LBL" Content="Teorijska snaga na osnovu Sistemske krive " HorizontalAlignment="Left" Margin="512,75,0,0" VerticalAlignment="Top" Width="254" Height="27"/>
+        <TextBox x:Name="TeorijskaSnaga1_TXB" HorizontalAlignment="Left" Height="23" Margin="619,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="{Binding PodaciZaKrivuMain.TeorijskaSnagaText, Source={StaticResource unosIPrikazViewModel}}" />
+        <Label x:Name="RadniBrojObrtaja_LBL" Content="Radni broj obrtaja ventilatora" HorizontalAlignment="Left" Margin="26,103,0,0" VerticalAlignment="Top" Width="169" Height="27"/>
+        <TextBox x:Name="RadniBrojObrtaja_TXB" HorizontalAlignment="Left" Height="23" Margin="26,135,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="{Binding PodaciZaKrivuMain.BrojObrtajaVentilatoraText,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged, Source={StaticResource unosIPrikazViewModel}}"  />
+        <Label x:Name="IzmerenaSnaga_LBL" Content="Izmerena snaga" HorizontalAlignment="Left" Margin="26,219,0,0" VerticalAlignment="Top" Width="136" Height="27"/>
+        <Label x:Name="IzmerenProtok_LBL" Content="Izmereni protok" HorizontalAlignment="Left" Margin="26,164,0,0" VerticalAlignment="Top" Width="159" Height="27"/>
+        <TextBox x:Name="IzmerenaSnaga_TXB" HorizontalAlignment="Left" Height="23" Margin="26,258,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="{Binding PodaciZaKrivuMain.IzmerenaSnagaText,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged, Source={StaticResource unosIPrikazViewModel}}"/>
+        <TextBox x:Name="IzmereniProtok_TXB" HorizontalAlignment="Left" Height="23" Margin="26,196,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="{Binding PodaciZaKrivuMain.IzmerenProtokText,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged, Source={StaticResource unosIPrikazViewModel}}" />
+        <Button x:Name="IzracunajEfikasnostventilatora_BTN" Content="Izračunaj efikanost ventilatora" HorizontalAlignment="Left" Margin="267,111,0,0" VerticalAlignment="Top" Width="174" Command="{Binding IzracunajEfikasnost, Source={StaticResource unosIPrikazViewModel}}" Height="30"/>
+        <Label x:Name="OdstupanjeIzmerenogProtoka_AM3_LBL" Content="Odstupanje izmerenog protoka&#xD;&#xA; od teotrijske vrednosti u Am3" HorizontalAlignment="Left" Margin="513,231,0,0" VerticalAlignment="Top" Width="226" Height="40"/>
+        <TextBox x:Name="OdstupanjeProtok_AM3_TXB" HorizontalAlignment="Left" Height="21" Margin="542,289,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="79" Text="{Binding PodaciZaKrivuMain.OdstupanjeIzmernogProtokaText, Source={StaticResource unosIPrikazViewModel}}"/>
+        <TextBox x:Name="OdstupanjeProtok_Procenat_TXB" HorizontalAlignment="Left" Height="23" Margin="670,287,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="67" Text="{Binding PodaciZaKrivuMain.OdstupanjeIzmernogProtokaProcenatText, Source={StaticResource unosIPrikazViewModel}}"/>
+        <Label x:Name="OdstupanjeIzmereneSnage_kW_LBL" Content="Odstupanje izmerene snage ventilatora &#xD;&#xA;od teotrijske vrednosti u kW" HorizontalAlignment="Left" Margin="513,315,0,0" VerticalAlignment="Top" Width="238" Height="45"/>
+        <TextBox x:Name="OdstupanjeSnaga_KW_TXB" HorizontalAlignment="Left" Height="35" Margin="564,365,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102" Text="{Binding PodaciZaKrivuMain.OdstupanjeIzmerneSnageText, Source={StaticResource unosIPrikazViewModel}}"/>
+        <TextBox x:Name="OdstupanjeSnaga_Procenat_TXB" HorizontalAlignment="Left" Height="35" Margin="684,365,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="82" Text="{Binding PodaciZaKrivuMain.OdstupanjeIzmerneSnageProcenatText, Source={StaticResource unosIPrikazViewModel}}"/>
+        <Label x:Name="TeorijskTotalniPritisak_LBL" Content="Teorijski totalni pritisak na&#xD;&#xA; osnovu Sistemske krive " HorizontalAlignment="Left" Margin="512,139,0,0" VerticalAlignment="Top" Width="254" Height="43"/>
+        <TextBox x:Name="TeorijskaTotalniPritisak_TXB" HorizontalAlignment="Left" Height="23" Margin="619,187,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="{Binding PodaciZaKrivuMain.TeorijskiPritisakText, Source={StaticResource unosIPrikazViewModel}}" />
+        <Label x:Name="IzmerenIzlazniP_LBL" Content="Izmereni izlazni pritisak mbar" HorizontalAlignment="Left" Margin="26,336,0,0" VerticalAlignment="Top" Width="169" Height="27"/>
+        <Label x:Name="IzmerenUlazniP_LBL" Content="Izmereni ulazni pritisak mbar" HorizontalAlignment="Left" Margin="26,281,0,0" VerticalAlignment="Top" Width="169" Height="27"/>
+        <TextBox x:Name="IzmereniIzlazniPritisak_TXB" HorizontalAlignment="Left" Height="20" Margin="26,368,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="108" Text="{Binding PodaciZaKrivuMain.IzmerenIzlazniPritisakText,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged, Source={StaticResource unosIPrikazViewModel}}"/>
+        <TextBox x:Name="IzmereniUlazniPritisak_TXB" HorizontalAlignment="Left" Height="23" Margin="26,308,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="{Binding PodaciZaKrivuMain.IzmerenUlazniPritisakText,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged, Source={StaticResource unosIPrikazViewModel}}"/>
+        <Label x:Name="TeorijskaEfikasnost_LBL" Content="Efikasnost ventilatora na osnovu teorijskih vrednosti" HorizontalAlignment="Left" Margin="201,146,0,0" VerticalAlignment="Top" Width="306" FontWeight="Bold" Foreground="#FF2B2222" Background="#FF15C12D" BorderBrush="#FFC11515"/>
+        <Label x:Name="EfikasnostMerenje_LBL" Content="Efikasnost ventilatora na osnovu izmerenih vrednosti" HorizontalAlignment="Left" Margin="201,240,0,0" VerticalAlignment="Top" Width="306" Foreground="#FF2B2222" Background="#FF0DF0DB" BorderBrush="#FFC11515" FontWeight="Bold" FontFamily="Palatino Linotype"/>
+        <TextBox x:Name="TeorijskaEfikasnost_TXB" HorizontalAlignment="Left" Height="23" Margin="232,194,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" FontWeight="Bold" Text="{Binding PodaciZaKrivuMain.TeorijskaEfikasnostText, Source={StaticResource unosIPrikazViewModel}}"/>
+        <TextBox x:Name="IzmerenaEfikasnost_TXB" HorizontalAlignment="Left" Height="23" Margin="232,294,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontWeight="Bold" Text="{Binding PodaciZaKrivuMain.IzracunataEfikasnostText, Source={StaticResource unosIPrikazViewModel}}"/>
+        <Label x:Name="lbl_IzabraniVentilator" Content="Izabrani ventilator" HorizontalAlignment="Left" Margin="217,15,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txbx_IzabraniVentilator" HorizontalAlignment="Left" Height="23" Margin="327,19,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="{Binding PodaciMainVm, Source={StaticResource unosIPrikazViewModel}}"  />
+        <Button x:Name="btn_IzvozUExcel" Content="Izvoz U Excel" HorizontalAlignment="Left" Margin="10,19,0,0" VerticalAlignment="Top" Width="120" Height="44" Command="{Binding IzveziUExcel, Source={StaticResource unosIPrikazViewModel}}" />
+        <Button x:Name="btn_PrikazDijagrama" Content="Prikaz dijagrama" HorizontalAlignment="Left" Margin="10,68,0,0" VerticalAlignment="Top" Width="120" Height="35" Command="{Binding prikazDijagramaCommand, Source={StaticResource unosIPrikazViewModel}}" />
+
+    </Grid>
+</Window>

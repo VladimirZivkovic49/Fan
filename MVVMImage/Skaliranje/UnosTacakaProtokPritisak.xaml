@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="MVVMImage.Skaliranje.UnosTacakaProtokPritisak"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MVVMImage.Skaliranje"
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="160">
+    <Grid>
+
+        <RadioButton x:Name="rdb_PowerRadio_Tacka_X1" Content="Prva tacka X" HorizontalAlignment="Left"  VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="99" Margin="10,24,0,0"      />
+        <RadioButton x:Name="rdb_PowerRadio_Tacka_X2" Content="Druga tacka X" HorizontalAlignment="Left"  VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="99" Margin="10,114,0,0"      />
+        <RadioButton x:Name="rdb_PowerRadio_Tacka_Y1" Content="Prva tacka Y" HorizontalAlignment="Left"  VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="99" Margin="10,203,0,0"      />
+        <RadioButton x:Name="rdb_PowerRadio_Tacka_Y2" Content="Druga tacka Y" HorizontalAlignment="Left"  VerticalAlignment="Top " Margin="10,285,0,0" />
+        <Label x:Name="Protok_Pritisak_UC_Name" Content="Ose Protok i Pritisak" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="19,-2,0,0"/>
+      
+        
+        <Label x:Name="KoordinataX" Content="Xosa" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,44,0,0"/>
+        <Label x:Name="Kursor_X" Content="Xkurs" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,67,0,0"/>
+        <Label x:Name="KoordinataY" Content="Yosa" HorizontalAlignment="Left" VerticalAlignment="Top" Height="27" Margin="0,218,0,0"/>
+        <Label x:Name="Kursor_Y" Content="Ykurs" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,246,0,0"/>
+        <Label x:Name="KoordinataX_2" Content="Xosa" HorizontalAlignment="Left" Margin="0,134,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="KoordinataY_2" Content="Yosa" HorizontalAlignment="Left" Margin="0,316,0,0" VerticalAlignment="Top" Height="27"/>
+        <Label x:Name="Kursor_X_2" Content="Xkurs" HorizontalAlignment="Left" Margin="0,156,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Kursor_Y_2" Content="Ykurs" HorizontalAlignment="Left" Margin="0,343,0,0" VerticalAlignment="Top"/>
+
+        <TextBox  x:Name="ShowX_Zad_1"  HorizontalAlignment="Left" Height="23" TextWrapping="Wrap"  VerticalAlignment="Top" Width="115" Margin="39,44,0,0"  />
+        <TextBox  x:Name="ShowXMouse_Pos_1"  HorizontalAlignment="Left" Height="23"  TextWrapping="Wrap"  VerticalAlignment="Top" Width="115" Margin="39,72,0,0" />
+        <TextBox  x:Name="ShowX_Zad_2"  HorizontalAlignment="Left" Height="23" TextWrapping="Wrap"  VerticalAlignment="Top" Width="115"   Margin="39,134,0,0"/>
+        <TextBox  x:Name="ShowXMouse_Pos_2"  HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"  Margin="39,162,0,0"/>
+        <TextBox  x:Name="ShowY_Zad_1" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"  Margin="39,223,0,0"/>
+        <TextBox  x:Name="ShowYMouse_Pos_1" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap"  VerticalAlignment="Top" Width="115" Margin="39,251,0,0"/>
+        <TextBox  x:Name="ShowY_Zad_2" HorizontalAlignment="Left" Height="23"  TextWrapping="Wrap" VerticalAlignment="Top" Width="115"  Margin="39,344,0,0"/>
+        <TextBox  x:Name="ShowYMouse_Pos_2" HorizontalAlignment="Left" Height="23"  TextWrapping="Wrap" VerticalAlignment="Top" Width="115"  Margin="39,316,0,0"/>
+
+
+
+    </Grid>
+
+
+
+</UserControl>
